@@ -1,0 +1,27 @@
+[
+    {
+      "name": "Diamond Necklace",
+      "price": 2000,
+      "sellerName": "Luxury Jewels",
+      "details": "Exquisite diamond necklace with a unique design."
+    },
+    {
+      "name": "Gold Earrings",
+      "price": 500,
+      "sellerName": "Golden Creations",
+      "details": "Elegant gold earrings suitable for any occasion."
+    },
+    {
+      "name": "Sapphire Ring",
+      "price": 1200,
+      "sellerName": "Gemstone Emporium",
+      "details": "Beautiful sapphire ring with a sterling silver band."
+    },
+    {
+      "name": "Pearl Bracelet",
+      "price": 800,
+      "sellerName": "Ocean Pearls",
+      "details": "Classic pearl bracelet for a touch of sophistication."
+    }
+  ]
+  
