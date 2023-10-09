@@ -12,9 +12,6 @@ app.use(express.json())
 
 
 
-// username ----  Jewelry-Shop
-// pass --- TLrFpFL5cm6kjev6
-
 
 
 
