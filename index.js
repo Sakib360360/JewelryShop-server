@@ -55,9 +55,9 @@ async function run() {
             res.send(result)
         })
         // data by user
-        app.get('/myJwl/:postedBy', async (req, res) => {
-            const postedBy = req.params.postedBy;
-            const result = await allJewelryCollections.find({ postedBy: postedBy }).toArray()
+        app.get('/myJwl/:email', async (req, res) => {
+            const email = req.params.email;
+            const result = await allJewelryCollections.find({ email: email }).toArray()
             res.send(result)
             console.log(result)
         })
@@ -65,6 +65,31 @@ async function run() {
         app.delete('/delete/:id', async (req, res) => {
             const id = req.params.id;
             const result = await allJewelryCollections.deleteOne({ _id: new ObjectId(id) })
+            res.send(result)
+        })
+
+
+
+        // client dashboard
+        app.get('/client/:email', async (req, res) => {
+            const email = req.params.email;
+            if (req.decoded.email !== email) {
+                return res.send({ isClient: false })
+            }
+            const query = { email: email }
+            const user = await allJewelryCollections.findOne(query)
+            const result = { isClient: user?.role === 'client' }
+            res.send(result)
+        })
+        // admin dashboard
+        app.get('/admin/:email', async (req, res) => {
+            const email = req.params.email;
+            if (req.decoded.email !== email) {
+                return res.send({ isAdmin: false })
+            }
+            const query = { email: email }
+            const user = await allJewelryCollections.findOne(query)
+            const result = { isAdmin: user?.role === 'admin' }
             res.send(result)
         })
 
